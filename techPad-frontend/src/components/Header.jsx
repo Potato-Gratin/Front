@@ -24,10 +24,11 @@ function Header() {
     };
 
     return (
-        <AppBar position="static" sx={{ height: 32, backgroundColor: '#ffffff', color: '#043c78' }}>
+        <AppBar position="relative" sx={{ height: 60, backgroundColor: '#ffffff', color: '#043c78', zIndex: 1000 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters variant='dense'>
-                    <ElectricBoltIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: '.8rem' }} />
+                    {/* PC */}
+                    <ElectricBoltIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: '1.5rem' }} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -37,16 +38,18 @@ function Header() {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontWeight: 700,
-                            fontSize: '.8rem',
+                            fontSize: '1.5rem',
                             letterSpacing: '0.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
                             textTransform: 'none'
                         }}
                     >
-                        Deep Sea Library
+                        TechPad
                     </Typography>
+                    {/* PC */}
 
+                    {/* モバイル */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -88,7 +91,7 @@ function Header() {
                         component="a"
                         href="#app-bar-with-responsive-menu"
                         sx={{
-                            mr: 2,
+                            mr: 5,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontWeight: 700,
@@ -98,19 +101,23 @@ function Header() {
                             textDecoration: 'none',
                         }}
                     >
-                        Deep Sea Library
+                        TechPad
                     </Typography>
+                    {/* モバイル */}
+
+                    {/* PC */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: '#043c78', display: 'block', textTransform: 'none', fontSize: '.8rem' }}
+                                sx={{ my: 2, color: '#043c78', display: 'block', textTransform: 'none', fontSize: '1rem' }}
                             >
                                 {page}
                             </Button>
                         ))}
                     </Box>
+                    {/* PC */}
                 </Toolbar>
             </Container>
         </AppBar>
