@@ -3,9 +3,11 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
-        neutral: {
-            main: '#FFFFFF',
-            contrastText: '#043c78',
+        navy: {
+            main: '#043c78',
+        },
+        lightBlue: {
+            main: '#afc8ff',
         },
         background: {
             default: '#FFFFFF',
@@ -14,7 +16,7 @@ const theme = createTheme({
     typography: {
         fontFamily: [
             'Cormorant Garamond',
-            'Noto Serif Japanese',
+            'Noto Serif JP',
             'sans-serif'
         ].join(','),
     },
@@ -22,11 +24,11 @@ const theme = createTheme({
         MuiToolbar: {
             styleOverrides: {
                 dense: {
-                    height: 32,
-                    minHeight: 32,
+                    height: 60,
+                    minHeight: 60,
                 }
             }
-        }
+        },
     },
 });
 

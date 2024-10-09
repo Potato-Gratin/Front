@@ -14,10 +14,11 @@ const returnTop = () => {
 
 function Footer() {
     return (
-        <AppBar position="absolute" sx={{ height: 32, backgroundColor: '#ffffff', color: '#043c78', bottom: 0, top: 'auto' }}>
+        <AppBar position="absolute" sx={{ height: 60, backgroundColor: '#ffffff', color: '#043c78', bottom: 0, top: 'auto', zIndex: 1000 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters variant='dense'>
-                    <CopyrightIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: .1, fontSize: '.7rem' }} />
+                    {/* PC */}
+                    <CopyrightIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: .5, fontSize: '.7rem' }} />
                     <Typography
                         variant="caption"
                         noWrap
@@ -25,6 +26,7 @@ function Footer() {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontWeight: 600,
+                            fontSize: '1rem',
                             letterSpacing: '.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -41,6 +43,7 @@ function Footer() {
                             display: { xs: 'none', md: 'flex' },
                             flexGrow: 1,
                             fontWeight: 600,
+                            fontSize: '1rem',
                             letterSpacing: '.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -49,7 +52,10 @@ function Footer() {
                         }}>
                         Back to Top
                     </Typography>
-                    <CopyrightIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: .1, fontSize: '.7rem' }} />
+                    {/* PC */}
+
+                    {/* モバイル */}
+                    <CopyrightIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: .1, fontSize: '.5rem' }} />
                     <Typography
                         variant="caption"
                         noWrap
@@ -81,6 +87,7 @@ function Footer() {
                         }}>
                         Back to Top
                     </Typography>
+                    {/* モバイル */}
                 </Toolbar>
             </Container>
         </AppBar>
