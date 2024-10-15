@@ -39,7 +39,7 @@ export default function Search({ width, height }) {
                         type="submit"
                         sx={{
                             textTransform: 'none',
-                            fontSize: '1rem',
+                            fontSize: '.8rem',
                             color: 'navy.main',
                             borderColor: 'lightBlue.main',
                             backgroundColor: 'lightBlue.main',
