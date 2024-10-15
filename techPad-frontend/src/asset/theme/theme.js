@@ -15,7 +15,6 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: [
-            'Cormorant Garamond',
             'Noto Serif JP',
             'sans-serif'
         ].join(','),
