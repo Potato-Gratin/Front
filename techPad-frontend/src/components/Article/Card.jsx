@@ -7,28 +7,31 @@ import Favorite from "../Favorite";
 import Comment from "../Comment";
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
 import { Button } from "@mui/material";
+import { useTheme } from "@mui/material";
 
 export default function ArticleCard({ title, user, date, text, favorite, comment }) {
+    const theme = useTheme();
+
     return (
         <>
         {/* PC */}
-        <Card sx={{ display: { xs: 'none', md: 'block' }, width: '100%', height: '100%', border: '1px solid navy', marginBottom: '1rem' }}>
+        <Card sx={{ display: { xs: 'none', md: 'block' }, width: '100%', height: '100%', border: `1px solid ${theme.palette.navy.main}`, marginBottom: '1rem' }}>
             <CardContent>
                 <div style={{ padding: '0 .5rem' }}>
-                    <DnsOutlinedIcon sx={{ color: 'lightBlue.main', fontSize: '3rem' }} />
+                    <DnsOutlinedIcon sx={{ color: 'blue.main', fontSize: '3rem' }} />
                     <div style={{ display: 'flex' }}>
-                        <Title title={title} sx={{ color: 'navy.main', fontSize: '1.8rem', fontWeight: 'bold' }} />
-                        <PostUser user={user} sx={{ alignSelf: 'end', marginLeft: '.5rem', color: 'navy.main', fontSize: '1rem' }} />
+                        <Title title={title} sx={{ color: `${theme.palette.navy.main}`, fontSize: '1.8rem', fontWeight: 'bold' }} />
+                        <PostUser user={user} sx={{ alignSelf: 'end', marginLeft: '.5rem', color: `${theme.palette.navy.main}`, fontSize: '1rem' }} />
                     </div>
                     <div style={{ paddingLeft: '.2rem', marginTop: '.2rem' }}>
                         <PostDate date={date} color="gray" size=".8rem" />
                     </div>
                     <hr />
                     <div style={{ marginTop: '1rem', padding: '0 1rem' }}>
-                        <Text text={text} sx={{ color: 'navy.main', marginBottom: '1.5rem', fontSize: '1.2rem' }} />
+                        <Text text={text} sx={{ color: `${theme.palette.navy.main}`, marginBottom: '1.5rem', fontSize: '1.2rem' }} />
                         <div style={{ display: 'flex' }}>
-                            <Favorite num={favorite} iconSize="1.2rem" fontSize=".75rem" sx={{ color: 'navy.main' }} />
-                            <Comment num={comment} iconSize="1.2rem" fontSize=".75rem" sx={{ color: 'navy.main', marginLeft: '2rem' }} />
+                            <Favorite num={favorite} iconSize="1.2rem" fontSize=".75rem" sx={{ color: `${theme.palette.navy.main}` }} />
+                            <Comment num={comment} iconSize="1.2rem" fontSize=".75rem" sx={{ color: `${theme.palette.navy.main}`, marginLeft: '2rem' }} />
                         </div>
                     </div>
                 </div>
@@ -38,13 +41,13 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
                     href="#"
                     sx={{
                         marginTop: '1rem',
-                        backgroundColor: 'navy.main',
+                        backgroundColor: `${theme.palette.navy.main}`,
                         color: 'white',
                         width: '100%',
                         height: '2.3rem',
                         borderRadius: '10px',
                         '&:hover': {
-                            backgroundColor: 'navy.main',
+                            backgroundColor: `${theme.palette.navy.main}`,
                         }
                     }}>
                     もっと見る
@@ -54,23 +57,23 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
         {/* PC */}
 
         {/* モバイル */}
-        <Card sx={{ display: { xs: 'block', md: 'none' }, width: '100%', height: '100%', border: '1px solid navy' }}>
+        <Card sx={{ display: { xs: 'block', md: 'none' }, width: '100%', height: '100%', border: `1px solid ${theme.palette.navy.main}` }}>
             <CardContent sx={{ '&:last-child': { paddingBottom: '1rem' } }}>
                 <div style={{ padding: '0 .5rem' }}>
                     <div style={{ display: 'flex' }}>
-                    <DnsOutlinedIcon sx={{ color: 'lightBlue.main', fontSize: '1.5rem' }} />
-                        <Title title={title}  sx={{ alignSelf: 'end', color: 'navy.main', fontSize: '1rem', fontWeight: 'bold', marginLeft: '.3rem' }} />
-                        <PostUser user={user} sx={{ alignSelf: 'end', marginLeft: '.5rem', color: 'navy.main', fontSize: '.7rem' }} />
+                        <DnsOutlinedIcon sx={{ color: `${theme.palette.blue.main}`, fontSize: '1.5rem' }} />
+                        <Title title={title}  sx={{ alignSelf: 'end', color: `${theme.palette.navy.main}`, fontSize: '1rem', fontWeight: 'bold', marginLeft: '.3rem' }} />
+                        <PostUser user={user} sx={{ alignSelf: 'end', marginLeft: '.5rem', color: `${theme.palette.navy.main}`, fontSize: '.7rem' }} />
                     </div>
                     <div style={{ paddingLeft: '.2rem' }}>
                         <PostDate date={date} color="gray" size=".5rem" />
                     </div>
                     <hr />
                     <div style={{ marginTop: '1rem', padding: '0 .5rem' }}>
-                        <Text text={text} sx={{ color: 'navy.main', fontSize: '.7rem', marginBottom: '1rem' }} />
+                        <Text text={text} sx={{ color: `${theme.palette.navy.main}`, fontSize: '.7rem', marginBottom: '1rem' }} />
                         <div style={{ display: 'flex' }}>
-                            <Favorite num={favorite} iconSize=".8rem" fontSize=".6rem" sx={{ color: 'navy.main' }} />
-                            <Comment num={comment} iconSize=".8rem" fontSize=".6rem" sx={{ color: 'navy.main', marginLeft: '1.5rem' }} />
+                            <Favorite num={favorite} iconSize=".8rem" fontSize=".6rem" sx={{ color: `${theme.palette.navy.main}` }} />
+                            <Comment num={comment} iconSize=".8rem" fontSize=".6rem" sx={{ color: `${theme.palette.navy.main}`, marginLeft: '1.5rem' }} />
                         </div>
                     </div>
                 </div>
@@ -80,14 +83,14 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
                     href="#"
                     sx={{
                         marginTop: '1rem',
-                        backgroundColor: 'navy.main',
+                        backgroundColor: `${theme.palette.navy.main}`,
                         color: 'white',
                         width: '100%',
                         height: '1.4rem',
                         fontSize: '.7rem',
                         borderRadius: '10px',
                         '&:hover': {
-                            backgroundColor: 'navy.main',
+                            backgroundColor: `${theme.palette.navy.main}`,
                         }
                     }}>
                     もっと見る

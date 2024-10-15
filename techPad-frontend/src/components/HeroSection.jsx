@@ -1,8 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import barcode from "../asset/images/barcode.png";
 import Search from "./Search";
+import { useTheme } from "@mui/material";
 
 export default function HeroSection() {
+    const theme = useTheme();
+
     return (
         <>
             {/* ヒーローセクション */}
@@ -11,7 +14,7 @@ export default function HeroSection() {
             <Box
                 sx={{
                     display: { xs: 'none', md: 'flex' },
-                    background: 'linear-gradient(#043c78, #afc8ff)',
+                    background: `linear-gradient(${theme.palette.navy.main}, ${theme.palette.blue.main})`,
                     height: '45vh',
                     justifyContent: 'center',
                     alignItems: 'center',

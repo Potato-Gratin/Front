@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
+import { useTheme } from "@mui/material";
 
 export default function Search({ width, height }) {
+    const theme = useTheme();
     const [search, setSearch] = useState('');
 
     // 検索ボタンを押したときの処理
@@ -40,9 +42,9 @@ export default function Search({ width, height }) {
                         sx={{
                             textTransform: 'none',
                             fontSize: '.8rem',
-                            color: 'navy.main',
-                            borderColor: 'lightBlue.main',
-                            backgroundColor: 'lightBlue.main',
+                            color: `${theme.palette.navy.main}`,
+                            borderColor: `${theme.palette.blue.main}`,
+                            backgroundColor: `${theme.palette.blue.main}`,
                             height: '100%',
                         }}
                     >
@@ -84,7 +86,7 @@ export default function Search({ width, height }) {
                         sx={{
                             textTransform: 'none',
                             fontSize: '1rem',
-                            backgroundColor: 'lightBlue.main',
+                            backgroundColor: 'blue.main',
                             color: '#043c78',
                             borderColor: '#afc8ff',
                             height: height,
