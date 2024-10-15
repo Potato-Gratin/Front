@@ -13,7 +13,9 @@ root.render(
     <React.StrictMode>
         <RootLayout>
             <Header />
-            <AppRoutes />
+            <div style={{ marginBottom: '60px' }}>
+                <AppRoutes />
+            </div>
             <Footer />
         </RootLayout>
     </React.StrictMode>
