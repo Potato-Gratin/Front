@@ -14,7 +14,16 @@ const returnTop = () => {
 
 function Footer() {
     return (
-        <AppBar position="absolute" sx={{ height: 60, backgroundColor: '#ffffff', color: '#043c78', bottom: 0, top: 'auto', zIndex: 1000 }}>
+        <AppBar
+            position="absolute"
+            sx={{
+                height: 60,
+                backgroundColor: '#ffffff',
+                color: '#043c78',
+                bottom: 0,
+                top: 'auto',
+                zIndex: 1000
+            }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters variant='dense'>
                     {/* PC */}
@@ -26,7 +35,7 @@ function Footer() {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontWeight: 600,
-                            fontSize: '1rem',
+                            fontSize: '.8rem',
                             letterSpacing: '.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -43,7 +52,7 @@ function Footer() {
                             display: { xs: 'none', md: 'flex' },
                             flexGrow: 1,
                             fontWeight: 600,
-                            fontSize: '1rem',
+                            fontSize: '.8rem',
                             letterSpacing: '.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -64,6 +73,7 @@ function Footer() {
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontWeight: 600,
+                            fontSize: '.6rem',
                             letterSpacing: '.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -79,6 +89,7 @@ function Footer() {
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontWeight: 600,
+                            fontSize: '.6rem',
                             letterSpacing: '.05rem',
                             color: 'inherit',
                             textDecoration: 'none',
