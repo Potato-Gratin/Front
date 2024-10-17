@@ -1,21 +1,19 @@
 import { Box, Typography } from "@mui/material";
 import barcode from "../asset/images/barcode.png";
-import Search from "./Search";
+import Search from "../components/Search";
 import { useTheme } from "@mui/material";
 
-export default function HeroSection() {
+export default function SearchPage() {
     const theme = useTheme();
 
     return (
         <>
-            {/* ヒーローセクション */}
-
             {/* PC */}
             <Box
                 sx={{
                     display: { xs: 'none', md: 'flex' },
                     background: `linear-gradient(${theme.palette.navy.main}, ${theme.palette.blue.main})`,
-                    height: '45vh',
+                    height: '68.2vh',
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexDirection: 'column',
@@ -77,7 +75,7 @@ export default function HeroSection() {
                 sx={{
                     display: { xs: 'flex', md: 'none' },
                     background: 'linear-gradient(#043c78, #afc8ff)',
-                    height: '25vh',
+                    height: '73.4vh',
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexDirection: 'column',
@@ -132,8 +130,6 @@ export default function HeroSection() {
                 <Search width={{ xs: '60vw', md: '40vw' }} height={{ xs: '4vh', md: 'inherit' }} />
             </Box>
             {/* モバイル */}
-
-            {/* ヒーローセクション */}
         </>
     );
 }

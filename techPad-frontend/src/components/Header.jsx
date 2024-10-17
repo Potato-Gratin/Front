@@ -10,8 +10,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import { Link } from 'react-router-dom';
 
-const pages = ['Login/Sign in', 'Trends', 'Review', 'Q&A'];
+const pages = ['Login/Sign in', 'Trends', 'Review', 'Search'];
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -51,7 +52,8 @@ function Header() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                component={Link}
+                                to={page === 'Search' ? '/search' : '/'}
                                 sx={{ my: 2, color: '#043c78', display: 'block', textTransform: 'none', fontSize: '.8rem' }}
                             >
                                 {page}
