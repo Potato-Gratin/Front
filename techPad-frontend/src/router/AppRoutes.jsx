@@ -1,19 +1,18 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from '../app/home/Page';
-
+import SearchPage from '../app/SearchPage';
 const routes = [
     { path: '/', element: <Home /> },
+    { path: '/search', element: <SearchPage /> },
 ];
 
 export default function AppRoutes() {
     return (
-        <BrowserRouter>
-            <Routes>
-                {routes.map((route) => (
+        <Routes>
+            {routes.map((route) => (
                 <Route key={route.path} path={route.path} element={route.element} />
-                ))}
-            </Routes>
-        </BrowserRouter>
+            ))}
+        </Routes>
     );
 }
 
