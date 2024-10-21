@@ -15,9 +15,9 @@ root.render(
         <BrowserRouter>
             <RootLayout>
                 <Header />
-            <div style={{ marginBottom: '60px' }}>
-                <AppRoutes />
-            </div>
+                <div style={{ marginBottom: '60px' }}>
+                    <AppRoutes />
+                </div>
                 <Footer />
             </RootLayout>
         </BrowserRouter>
