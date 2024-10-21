@@ -12,7 +12,12 @@ import MenuItem from '@mui/material/MenuItem';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import { Link } from 'react-router-dom';
 
-const pages = ['Login/Sign in', 'Trends', 'Review', 'Search'];
+const pages = [
+    { id: 1, name: 'Login/Sign in', path: '/' },
+    { id: 2, name: 'Home', path: '/' },
+    { id: 3, name: 'Review', path: '/' },
+    { id: 4, name: 'Search', path: '/search' }
+]
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,7 +39,7 @@ function Header() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -51,12 +56,12 @@ function Header() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.id}
                                 component={Link}
-                                to={page === 'Search' ? '/search' : '/'}
-                                sx={{ my: 2, color: '#043c78', display: 'block', textTransform: 'none', fontSize: '.8rem' }}
+                                to={page.path}
+                                sx={{ my: 2, color: '#043c78', display: 'block', textTransform: 'none', fontSize: '.8rem', textAlign: 'center' }}
                             >
-                                {page}
+                                {page.name}
                             </Button>
                         ))}
                     </Box>
@@ -91,8 +96,8 @@ function Header() {
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center', textTransform: 'none', color: '#043c78' }}>{page}</Typography>
+                                <MenuItem key={page.id} onClick={handleCloseNavMenu} component={Link} to={page.path}>
+                                    <Typography sx={{ textAlign: 'center', textTransform: 'none', color: '#043c78' }}>{page.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -102,7 +107,7 @@ function Header() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 5,
                             display: { xs: 'flex', md: 'none' },
