@@ -15,7 +15,15 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
     return (
         <>
         {/* PC */}
-        <Card sx={{ display: { xs: 'none', md: 'block' }, width: '100%', height: '100%', border: `1px solid ${theme.palette.navy.main}`, marginBottom: '1rem' }}>
+        <Card
+            sx={{
+                display: { xs: 'none', md: 'block' },
+                width: '65%',
+                height: '100%',
+                border: `1px solid ${theme.palette.navy.main}`,
+                marginBottom: '1rem',
+                borderRadius: '10px'
+            }}>
             <CardContent>
                 <div style={{ padding: '0 .5rem' }}>
                     <DnsOutlinedIcon sx={{ color: 'blue.main', fontSize: '3rem' }} />
@@ -29,9 +37,9 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
                     <hr />
                     <div style={{ marginTop: '1rem', padding: '0 1rem' }}>
                         <Text text={text} sx={{ color: `${theme.palette.navy.main}`, marginBottom: '1.5rem', fontSize: '1.2rem' }} />
-                        <div style={{ display: 'flex' }}>
-                            <Favorite num={favorite} iconSize="1.2rem" fontSize=".75rem" sx={{ color: `${theme.palette.navy.main}` }} />
-                            <Comment num={comment} iconSize="1.2rem" fontSize=".75rem" sx={{ color: `${theme.palette.navy.main}`, marginLeft: '2rem' }} />
+                        <div style={{ display: 'flex', justifyContent: 'end' }}>
+                            <Favorite num={favorite} iconSize="1rem" fontSize=".8rem" sx={{ color: `${theme.palette.navy.main}` }} />
+                            <Comment num={comment} iconSize="1rem" fontSize=".8rem" sx={{ color: `${theme.palette.navy.main}`, marginLeft: '2rem' }} />
                         </div>
                     </div>
                 </div>

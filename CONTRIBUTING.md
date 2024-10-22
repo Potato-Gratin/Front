@@ -6,3 +6,7 @@
    - ArticlesResultは検索結果の記事を表示する
 3. components > Search内で検索ロジック作成
    - 入力内容の`search`への代入処理は実装済み
+   - /result遷移時にgetで入力内容を渡している（暫定）
+4. result > UserResult > `users`内にユーザー情報を代入
+   - uid、id、ユーザー名、プロフィール、記事数
+   - /user遷移時にgetでuidを渡している（暫定）

@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import { useTheme } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function Search({ width, height }) {
     const theme = useTheme();
+    const navigate = useNavigate();
     const [search, setSearch] = useState('');
 
     // 検索ボタンを押したときの処理
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('search:', search);
+        navigate(`/result?q=${search}`);
     }
 
     return (
