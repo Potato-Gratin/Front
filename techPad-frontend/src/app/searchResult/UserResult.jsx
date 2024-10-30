@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Card, CardContent, Typography, useTheme } from "@mui/material";
 import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
 import { useNavigate } from "react-router-dom";
