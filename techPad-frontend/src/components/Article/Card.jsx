@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent } from "@mui/material";
 import Title from "./Title";
 import Text from "./Text";

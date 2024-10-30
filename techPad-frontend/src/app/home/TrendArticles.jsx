@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Typography } from "@mui/material";
 import ArticleCard from "../../components/Article/Card";
 import { useTheme } from "@mui/material";

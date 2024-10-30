@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
@@ -39,18 +41,21 @@ export default function Search({ width, height }) {
                         }}
                     />
                     <Button
-                        variant="outlined"
+                        variant="contained"
+                        startIcon={<SearchIcon />}
                         type="submit"
                         sx={{
                             textTransform: 'none',
                             fontSize: '.8rem',
                             color: `${theme.palette.navy.main}`,
-                            borderColor: `${theme.palette.blue.main}`,
-                            backgroundColor: `${theme.palette.blue.main}`,
+                            backgroundColor: 'white',
                             height: '100%',
+                            '&:hover': {
+                                color: 'white',
+                                backgroundColor: `${theme.palette.navy.main}`,
+                            },
                         }}
                     >
-                        <SearchIcon sx={{ display: { fontSize: '1.2rem' }, mr: 1 }} />
                         Search
                     </Button>
                 </form>

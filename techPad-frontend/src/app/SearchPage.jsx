@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Typography } from "@mui/material";
 import barcode from "../asset/images/barcode.png";
 import Search from "../components/Search";
