@@ -15,10 +15,8 @@ import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import { Link } from 'react-router-dom';
 
 const pages = [
-    { id: 1, name: 'Login/Sign in', path: '/auth' },
-    { id: 2, name: 'Home', path: '/' },
-    { id: 3, name: 'Review', path: '/' },
-    { id: 4, name: 'Search', path: '/search' }
+    { id: 1, name: 'Search', path: '/search' },
+    { id: 2, name: 'Login/SignIn', path: '/auth' }
 ]
 
 function Header() {
