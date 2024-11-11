@@ -12,6 +12,7 @@ export default function UserProfileForm() {
     const [name, setName] = useState('');
     const [displayId, setDisplayId] = useState('');
     const [image, setImage] = useState(null);
+    const [imageKey, setImageKey] = useState(0);
     const [description, setDescription] = useState('');
 
     const handleImageChange = (e) => {
@@ -27,6 +28,7 @@ export default function UserProfileForm() {
 
     const handleImageRemove = () => {
         setImage(null);
+        setImageKey(prevKey => prevKey + 1);
     }
 
     const handleSubmit = (e) => {
@@ -53,6 +55,7 @@ export default function UserProfileForm() {
                             onChange={handleImageChange}
                             style={{ display: 'none' }}
                             id="userProfileForm-icon"
+                            key={imageKey}
                         />
                         <label htmlFor="userProfileForm-icon">
                             <Box sx={{ position: 'relative' }}>
