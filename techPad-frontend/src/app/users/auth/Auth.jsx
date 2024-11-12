@@ -52,7 +52,7 @@ export default function Auth() {
 
     return (
         <>
-            <Dialog open={open} onClose={handleClose}>
+            {/* <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Cookieの使用について</DialogTitle>
                 <DialogContent>
                     <Typography sx={{color: theme.palette.navy.main}}>
@@ -67,7 +67,7 @@ export default function Auth() {
                         No
                     </Button>
                 </DialogActions>
-            </Dialog>
+            </Dialog> */}
 
             {/* PC */}
             <Box sx={{ display: { xs: 'none', md: 'block' }, height: 'calc(100vh - 120px)' }}>
