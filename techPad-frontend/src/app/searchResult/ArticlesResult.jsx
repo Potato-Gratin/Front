@@ -1,4 +1,4 @@
-import ArticleCard from "../../components/Article/Card";
+import ArticleCard from "../../components/Article/card/Card";
 import { Box } from "@mui/material";
 
 const articles = [

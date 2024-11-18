@@ -1,12 +1,12 @@
-'use client';
+
 
 import { Card, CardContent } from "@mui/material";
 import Title from "./Title";
 import Text from "./Text";
 import PostDate from "./PostDate";
 import PostUser from "./PostUser";
-import Favorite from "../Favorite";
-import Comment from "../Comment";
+import Favorite from "../../Favorite";
+import Comment from "../../Comment";
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
 import { Button } from "@mui/material";
 import { useTheme } from "@mui/material";
