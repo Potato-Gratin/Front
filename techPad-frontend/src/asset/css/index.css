@@ -7,15 +7,3 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
-
-.md-editor {
-    font-family: "Source Code Pro", monospace;
-}
-
-.editor-statusbar {
-    display: none;
-}
-
-.md-editor .editor-toolbar {
-    height: 30px;
-}

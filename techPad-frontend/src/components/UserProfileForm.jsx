@@ -1,4 +1,4 @@
-
+'use client';
 
 import { useTheme } from "@emotion/react";
 import { Avatar, Box, Button, IconButton, TextField, Typography } from "@mui/material";

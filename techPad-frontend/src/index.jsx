@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -9,13 +11,15 @@ import './asset/css/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <RootLayout>
-            <Header />
-            <div style={{ marginBottom: '60px' }}>
-                <AppRoutes />
-            </div>
-            <Footer />
-        </RootLayout>
-    </BrowserRouter>
+    <React.StrictMode>
+        <BrowserRouter>
+            <RootLayout>
+                <Header />
+                <div style={{ marginBottom: '60px' }}>
+                    <AppRoutes />
+                </div>
+                <Footer />
+            </RootLayout>
+        </BrowserRouter>
+    </React.StrictMode>
 );
