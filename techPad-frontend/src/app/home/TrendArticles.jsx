@@ -1,7 +1,7 @@
-'use client';
+
 
 import { Box, Typography } from "@mui/material";
-import ArticleCard from "../../components/Article/Card";
+import ArticleCard from "../../components/Article/card/Card";
 import { useTheme } from "@mui/material";
 
 const articles = [
