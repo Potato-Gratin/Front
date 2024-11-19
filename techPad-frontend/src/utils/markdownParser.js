@@ -1,5 +1,7 @@
-import markdownit from 'markdown-it';
+const markdownit = require("markdown-it");
 
-export function parse(md) {
+const parse = (md) => {
   return markdownit().render(md);
 }
+
+module.exports = parse;
