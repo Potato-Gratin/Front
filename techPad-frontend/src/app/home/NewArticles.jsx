@@ -4,6 +4,7 @@ import { Box, Typography } from "@mui/material";
 import ArticleCard from "../../components/Article/card/Card";
 import { useTheme } from "@mui/material";
 
+// TODO: 記事を新しい順に取得する
 const articles = [
     {id: 1, title: 'タイトル', user: 'ユーザー', date: '2024-01-01', text: '本文', favorite: 1, comment: 1},
     {id: 2, title: 'タイトル', user: 'ユーザー', date: '2024-01-02', text: '本文', favorite: 2, comment: 2},
