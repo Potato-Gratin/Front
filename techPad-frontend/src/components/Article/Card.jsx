@@ -38,7 +38,7 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
                             {/* 投稿者 */}
                             <PostUser user={user} sx={{ alignSelf: 'end', marginLeft: '.5rem', color: `${theme.palette.navy.main}`, fontSize: '1rem' }} />
                         </div>
-                        <div style={{ paddingLeft: '.2rem', marginTop: '.2rem' }}>
+                        <div style={{ paddingLeft: '.2rem', marginTop: '.8rem' }}>
                             {/* 最終更新日 */}
                             <PostDate date={date} color="gray" size=".8rem" />
                         </div>
@@ -47,7 +47,7 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
                             {/* 本文 */}
                             <Text
                                 text={text.length > 100 ? `${text.substring(0, 100)}...` : text}
-                                sx={{ color: `${theme.palette.navy.main}`, marginBottom: '1.5rem', fontSize: '1.2rem' }}
+                                sx={{ color: `${theme.palette.navy.main}`, marginBottom: '1.5rem', fontSize: '1rem' }}
                             />
                             <div style={{ display: 'flex', justifyContent: 'end' }}>
                                 {/* いいね数 */}
