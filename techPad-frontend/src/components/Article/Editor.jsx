@@ -1,11 +1,38 @@
 import 'easymde/src/css/easymde.css';
 import 'codemirror/lib/codemirror.css';
 import MarkdownEditor from 'react-markdown-editor-smde';
-import { useRef } from 'react';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { useRef, useState } from 'react';
+import { Box, Button, FormControlLabel, Radio, RadioGroup, TextField, Typography } from '@mui/material';
+import { useTheme } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
 
-const Editor = () => {
+const markdownValue = '';
+const titleValue = '';
+const radioValue = 'false';
+
+export default function Editor() {
+    const theme = useTheme();
+    const navigate = useNavigate({ mdValue: markdownValue });
     const el = useRef();
+    const [radio, setRadioValue] = useState(radioValue);
+    const [title, setTitleValue] = useState(titleValue);
+
+    const handleChange = (e) => {
+        setRadioValue(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let md = '';
+        if (el.current) {
+            md = el.current.mdValue;
+        }
+        console.log(md);
+        console.log(title);
+        console.log(radio);
+        navigate('#');
+    }
+
     const toolbar = ["bold",
         "italic",
         "heading",
@@ -19,14 +46,13 @@ const Editor = () => {
         "|",
         "preview",
         "guide",
+        {
+            name: 'reset',
+            action: doReset,
+            className: 'fa-solid fa-clock-rotate-left',
+            title: 'Reset'
+        },
     ];
-
-    function onSubmit() {
-        if (el.current) {
-            const md = el.current.mdValue;
-            console.log(md);
-        }
-    }
 
     function doReset() {
         if (el.current) {
@@ -36,39 +62,83 @@ const Editor = () => {
 
     return (
         <>
-            <Box sx={{ width: 'fit-content', margin: '0 auto' }}>
-                <Box sx={{ width: '60vw' }}>
-                    <Typography
-                        variant='h2'
-                        sx={{
-                            fontWeight: 600,
-                            textAlign: 'center',
-                            color: 'white',
-                            letterSpacing: '.3rem',
-                            py: 4,
-                        }}
-                    >
-                        Article Editor
-                    </Typography>
-                    <TextField
-                        placeholder='Title'
-                        sx={{
-                            background: 'white',
-                            width: '100%',
-                            mb: 2,
-                            borderRadius: '5px',
-                            '& .MuiOutlinedInput-root': {
-                                fontFamily: 'Source Code Pro, monospace',
-                            },
-                        }}
-                    />
-                    <MarkdownEditor ref={el} toolbar={toolbar} />
-                    <Button onClick={onSubmit}>Submit</Button>
-                    <Button onClick={doReset}>Reset</Button>
-                </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <form onSubmit={handleSubmit} style={{ display: 'block', alignItems: 'center' }}>
+                    <Box sx={{ width: '60vw' }}>
+                        <Typography
+                            variant='h2'
+                            sx={{
+                                fontWeight: 600,
+                                textAlign: 'center',
+                                color: 'white',
+                                letterSpacing: '.3rem',
+                                py: 4,
+                            }}
+                        >
+                            Article Editor
+                        </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, width: '100%' }}>
+                            <TextField
+                                placeholder='Title'
+                                value={title}
+                                onChange={(e) => setTitleValue(e.target.value)}
+                                sx={{
+                                    background: 'white',
+                                    width: '70%',
+                                    borderRadius: '5px',
+                                    '& .MuiOutlinedInput-root': {
+                                        fontFamily: 'Source Code Pro, monospace',
+                                    },
+                                }}
+                            />
+                            <RadioGroup
+                                row
+                                value={radio}
+                                onChange={handleChange}
+                                sx={{
+                                    width: '25%',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    gap: 2,
+                                    ml: '2.5%',
+                                    color: 'white'
+                                }}
+                            >
+                                <FormControlLabel
+                                    value="false"
+                                    control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white' } }} />}
+                                    label="下書き"
+                                    sx={{ flex: 1, margin: 0 }}
+                                />
+                                <FormControlLabel
+                                    value="true"
+                                    control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white' } }} />}
+                                    label="公開"
+                                    sx={{ flex: 1, margin: 0 }}
+                                />
+                            </RadioGroup>
+                        </Box>
+                        <MarkdownEditor ref={el} toolbar={toolbar} />
+                        <Box sx={{ width: 'fit-content', margin: '0 auto' }}>
+                            <Button
+                                variant='contained'
+                                type='submit'
+                                sx={{
+                                    fontSize: '1rem',
+                                    textTransform: 'none',
+                                    background: theme.palette.navy.main,
+                                    color: 'white',
+                                    width: '25vw',
+                                    borderRadius: '1rem',
+                                    my: 4
+                                }}
+                            >
+                                投稿
+                            </Button>
+                        </Box>
+                    </Box>
+                </form>
             </Box>
         </>
     )
 }
-
-export default Editor;
