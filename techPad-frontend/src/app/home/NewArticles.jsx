@@ -38,7 +38,7 @@ export default function NewArticles() {
                     title={article.title}
                     user={article.user}
                     date={article.created_at}
-                    text={article.context}
+                    text={article.content}
                     favorite={article.favorite}
                     comment={article.comment}
                 />
