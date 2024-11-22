@@ -27,13 +27,11 @@ export default function Editor() {
         if (el.current) {
             md = el.current.mdValue;
         }
-        console.log(md);
-        console.log(title);
-        console.log(radio);
         navigate('#');
     }
 
-    const toolbar = ["bold",
+    const toolbar = [
+        "bold",
         "italic",
         "heading",
         "|",
@@ -62,7 +60,14 @@ export default function Editor() {
 
     return (
         <>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    minHeight: 'calc(100vh - 120px)'
+                }}
+            >
                 <form onSubmit={handleSubmit} style={{ display: 'block', alignItems: 'center' }}>
                     <Box sx={{ width: '60vw' }}>
                         <Typography
