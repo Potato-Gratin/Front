@@ -1,5 +1,3 @@
-
-
 import { useTheme } from "@emotion/react";
 import { Avatar, Box, Button, IconButton, TextField, Typography } from "@mui/material";
 import { useState } from "react";
@@ -34,6 +32,7 @@ export default function UserProfileForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const profile = {
+            image: image,
             name: name,
             displayId: displayId,
             description: description,

@@ -25,9 +25,9 @@
   - ヘッダーのリンクを修正
   - 記事検索結果画面　作成
   - 検索画面から検索結果画面への遷移を追加
-  - ~~CONTRIBUTING.md追加~~
+  - CONTRIBUTING.md追加
   - ユーザー検索結果画面　作成
-  - ~~CONTRIBUTING.md更新~~
+  - CONTRIBUTING.md更新
   - AppRoutes.jsxにルート追加
   - 細かなデザインの修正
 - 2024/11/11
