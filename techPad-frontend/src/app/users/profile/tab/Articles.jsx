@@ -1,5 +1,5 @@
 import { useTheme, Box, Button } from "@mui/material";
-import ArticleCard from "../../../../components/Article/card/Card";
+import ArticleCard from "../../../../components/Article/Card";
 
 const articles = [
     { id: 1, title: 'タイトル', user: 'ユーザー', date: '2024-01-01', text: '本文', favorite: 1, comment: 1 },
