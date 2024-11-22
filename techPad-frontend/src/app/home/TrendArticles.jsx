@@ -1,7 +1,5 @@
-
-
 import { Box, Typography } from "@mui/material";
-import ArticleCard from "../../components/Article/card/Card";
+import ArticleCard from "../../components/Article/Card";
 import { useTheme } from "@mui/material";
 
 const articles = [
@@ -18,7 +16,9 @@ export default function TrendArticles() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: '1rem',
-                padding: { xs: '1rem', md: '1rem 2.5rem' },
+                pt: '1rem',
+                pb: '3rem',
+                px: '2.5rem',
                 background: `linear-gradient(${theme.palette.blue.main}, 70%, white)`,
             }}
         >

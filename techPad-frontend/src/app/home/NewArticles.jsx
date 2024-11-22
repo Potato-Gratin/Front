@@ -1,7 +1,5 @@
-
-
 import { Box, Typography } from "@mui/material";
-import ArticleCard from "../../components/Article/card/Card";
+import ArticleCard from "../../components/Article/Card";
 import { useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 
