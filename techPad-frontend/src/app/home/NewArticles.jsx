@@ -4,7 +4,11 @@ import { useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function NewArticles() {
-    const [articles, setArticles] = useState([]);
+    const [articles, setArticles] = useState([
+        {id: 1, title: 'タイトル', user: 'ユーザー', created_at: '2024-01-01', content: '本文', favorite: 1, comment: 1},
+        {id: 2, title: 'タイトル', user: 'ユーザー', created_at: '2024-01-02', content: '本文', favorite: 2, comment: 2},
+        {id: 3, title: 'タイトル', user: 'ユーザー', created_at: '2024-01-03', content: '本文', favorite: 3, comment: 3}
+    ]);
 
     const theme = useTheme();
     useEffect(() => {
