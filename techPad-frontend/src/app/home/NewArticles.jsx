@@ -3,16 +3,24 @@
 import { Box, Typography } from "@mui/material";
 import ArticleCard from "../../components/Article/card/Card";
 import { useTheme } from "@mui/material";
-
-// TODO: 記事を新しい順に取得する
-const articles = [
-    {id: 1, title: 'タイトル', user: 'ユーザー', date: '2024-01-01', text: '本文', favorite: 1, comment: 1},
-    {id: 2, title: 'タイトル', user: 'ユーザー', date: '2024-01-02', text: '本文', favorite: 2, comment: 2},
-    {id: 3, title: 'タイトル', user: 'ユーザー', date: '2024-01-03', text: '本文', favorite: 3, comment: 3}
-];
+import { useEffect, useState } from "react";
 
 export default function NewArticles() {
+    const [articles, setArticles] = useState([]);
+
     const theme = useTheme();
+    useEffect(() => {
+        const origin = process.env.REACT_APP_API_ORIGIN
+        fetch(origin + '/articles')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                setArticles(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }, [])
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', padding: { xs: '1rem', md: '1rem 2.5rem' } }}>
@@ -31,8 +39,8 @@ export default function NewArticles() {
                     key={article.id}
                     title={article.title}
                     user={article.user}
-                    date={article.date}
-                    text={article.text}
+                    date={article.created_at}
+                    text={article.context}
                     favorite={article.favorite}
                     comment={article.comment}
                 />
