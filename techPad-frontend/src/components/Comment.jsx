@@ -5,7 +5,7 @@ export default function Comment({ sx, num, iconSize, fontSize }) {
     return (
         <>
             <Box component='a' href='#' sx={{ display: 'flex', textDecoration: 'none', marginLeft: '2rem' }}>
-                <ChatBubbleOutlineOutlinedIcon fontSize={iconSize} sx={{...sx, alignSelf: 'center' }} />
+                <ChatBubbleOutlineOutlinedIcon sx={{...sx, alignSelf: 'center', width: iconSize, height: 'auto' }} />
                 <Typography variant="body1" fontSize={fontSize} sx={{...sx, marginLeft: '.3rem', alignSelf: 'center' }}>
                 {num}
                 </Typography>

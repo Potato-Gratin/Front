@@ -8,7 +8,7 @@ body {
     box-sizing: border-box;
 }
 
-.CodeMirror-code, .editor-preview {
+.CodeMirror-code, .editor-preview, code {
     font-family: "Source Code Pro", monospace;
 }
 
