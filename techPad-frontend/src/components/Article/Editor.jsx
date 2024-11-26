@@ -23,10 +23,10 @@ export default function Editor() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let md = '';
-        if (el.current) {
-            md = el.current.mdValue;
-        }
+        // let md = '';
+        // if (el.current) {
+        //     md = el.current.mdValue;
+        // }
         navigate('#');
     }
 

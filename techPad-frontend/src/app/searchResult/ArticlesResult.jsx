@@ -22,7 +22,7 @@ export default function ArticlesResult() {
                 setArticles(data)
             })
             .catch((error) => console.error(error));
-    }, [])
+    }, [keyword])
 
     return (
         <>
