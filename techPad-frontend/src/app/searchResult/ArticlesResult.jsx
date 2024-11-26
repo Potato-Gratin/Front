@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 
 export default function ArticlesResult() {
     const [articles, setArticles] = useState([
-        { id: 1, title: 'タイトル', user: 'ユーザー', date: '2024-01-01', text: '本文', favorite: 1, comment: 1 },
-        { id: 2, title: 'タイトル', user: 'ユーザー', date: '2024-01-02', text: '本文', favorite: 2, comment: 2 },
-        { id: 3, title: 'タイトル', user: 'ユーザー', date: '2024-01-03', text: '本文', favorite: 3, comment: 3 }
+        { id: 1, title: 'タイトル', user: 'ユーザー', date: '2024-01-01', content: '本文', favorite: 1, comment: 1 },
+        { id: 2, title: 'タイトル', user: 'ユーザー', date: '2024-01-02', content: '本文', favorite: 2, comment: 2 },
+        { id: 3, title: 'タイトル', user: 'ユーザー', date: '2024-01-03', content: '本文', favorite: 3, comment: 3 }
     ]);
 
     const location = useLocation();
@@ -33,7 +33,7 @@ export default function ArticlesResult() {
                         title={article.title}
                         user={article.user}
                         date={article.date}
-                        text={article.text}
+                        text={article.content}
                         favorite={article.favorite}
                         comment={article.comment}
                     />
