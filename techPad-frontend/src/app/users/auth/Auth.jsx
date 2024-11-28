@@ -22,7 +22,7 @@ export default function Auth() {
         const { user, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: 'http://localhost:3000/auth/redirect',
+                redirectTo: 'http://localhost:5000/auth/redirect',
             }
         });
 
@@ -37,7 +37,7 @@ export default function Auth() {
         const { user, error } = await supabase.auth.signInWithOAuth({
             provider: 'github',
             options: {
-                redirectTo: 'http://localhost:3000/auth/redirect',
+                redirectTo: 'http://localhost:5000/auth/redirect',
             }
         });
 

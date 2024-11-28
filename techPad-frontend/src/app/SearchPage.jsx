@@ -10,7 +10,6 @@ export default function SearchPage() {
 
     return (
         <>
-            {/* PC */}
             <Box sx={{ display: { xs: 'none', md: 'block' }, height: 'calc(100vh - 120px)' }}>
                 <Box
                     sx={{
@@ -20,8 +19,8 @@ export default function SearchPage() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         flexDirection: 'column',
-                        paddingTop: '1.5rem',
-                        paddingBottom: '4rem'
+                        pt: 2,
+                        pb: '4rem'
                     }}
                 >
                     <Typography
@@ -72,70 +71,6 @@ export default function SearchPage() {
                     <Search width={{ xs: '60vw', md: '35vw' }} height={{ xs: '2rem', md: 'inherit' }} />
                 </Box>
             </Box>
-            {/* PC */}
-
-            {/* モバイル */}
-            <Box sx={{ display: { xs: 'block', md: 'none' }, height: 'calc(100vh - 120px)' }}>
-                <Box
-                    sx={{
-                        display: { xs: 'flex', md: 'none' },
-                        background: 'linear-gradient(#043c78, #afc8ff)',
-                        height: 'calc(100% - 60px)',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        flexDirection: 'column',
-                        paddingTop: '1.5rem',
-                        paddingBottom: '2rem'
-                    }}
-                >
-                    <Typography
-                        variant="h4"
-                        noWrap
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'white',
-                            textDecoration: 'none',
-                            textTransform: 'none',
-                            width: 'fit-content',
-                            margin: '0 auto',
-                            marginBottom: '.3rem'
-                        }}
-                    >
-                        TechPad
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            fontWeight: 300,
-                            fontSize: '.8rem',
-                            letterSpacing: '0.05rem',
-                            color: 'white',
-                            textDecoration: 'none',
-                            textTransform: 'none',
-                            width: 'fit-content',
-                            margin: '0 auto'
-                        }}
-                    >
-                        Deeper knowledge to you...
-                    </Typography>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'center', alignItems: 'center' }}>
-                        <img
-                            src={barcode}
-                            alt="And you will continue to enhance your curiosity."
-                            width="50%"
-                            height="auto"
-                        />
-                    </Box>
-                    <Search width={{ xs: '60vw', md: '40vw' }} height={{ xs: '4vh', md: 'inherit' }} />
-                </Box>
-            </Box>
-            {/* モバイル */}
         </>
     );
 }
