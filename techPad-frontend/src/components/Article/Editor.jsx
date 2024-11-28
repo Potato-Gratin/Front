@@ -9,6 +9,10 @@ import { useNavigate } from 'react-router-dom';
 const markdownValue = '';
 const titleValue = '';
 const radioValue = 'false';
+let txtValue = '保存';
+if (radioValue === 'true') {
+    txtValue = '投稿';
+}
 
 export default function Editor() {
     const theme = useTheme();
@@ -16,9 +20,11 @@ export default function Editor() {
     const el = useRef();
     const [radio, setRadioValue] = useState(radioValue);
     const [title, setTitleValue] = useState(titleValue);
+    const [txt, setTxt] = useState(txtValue);
 
     const handleChange = (e) => {
         setRadioValue(e.target.value);
+        setTxt(e.target.value === 'true' ? '投稿' : '保存');
     }
 
     const handleSubmit = (e) => {
@@ -29,6 +35,7 @@ export default function Editor() {
         // }
         navigate('#');
     }
+
 
     const toolbar = [
         "bold",
@@ -138,7 +145,7 @@ export default function Editor() {
                                     my: 4
                                 }}
                             >
-                                投稿
+                                {txt}
                             </Button>
                         </Box>
                     </Box>
