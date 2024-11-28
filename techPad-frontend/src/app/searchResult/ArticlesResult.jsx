@@ -1,9 +1,12 @@
 import { useLocation } from "react-router-dom";
 import ArticleCard from "../../components/Article/Card";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
+import { useTheme } from "@emotion/react";
 
 export default function ArticlesResult() {
+    const theme = useTheme();
+
     const [articles, setArticles] = useState([
         { id: 1, title: 'タイトル', user: 'ユーザー', date: '2024-01-01', content: '本文', favorite: 1, comment: 1 },
         { id: 2, title: 'タイトル', user: 'ユーザー', date: '2024-01-02', content: '本文', favorite: 2, comment: 2 },
@@ -26,7 +29,25 @@ export default function ArticlesResult() {
 
     return (
         <>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', padding: { xs: '0 1rem', md: '0 2.5rem' } }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    padding: '1.5rem'
+                }}
+            >
+                <Typography
+                    sx={{
+                        fontSize: '2.5rem',
+                        fontWeight: 'bold',
+                        color: theme.palette.navy.main,
+                        margin: '1.5rem 0'
+                    }}
+                >
+                    Search Result
+                </Typography>
                 {articles.map((article) => (
                     <ArticleCard
                         key={article.id}
