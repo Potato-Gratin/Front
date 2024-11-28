@@ -20,7 +20,7 @@ const routes = [
     { path: '/auth', element: <Auth /> },   // ログイン画面
     { path: '/auth/redirect', element: <AuthRedirect /> },  // ログイン後のリダイレクト先ページ
     { path: '/userSetting', element: <SettingProfile /> },   // 新規ユーザーの情報登録画面
-    { path: '/profile', element: <Profile /> },   // 新規ユーザーの情報登録画面
+    { path: '/profile', element: <Profile /> },   // ユーザープロフィール
     { path: '/article/create', element: <CreateArticles /> },   // 記事作成画面
     { path: '/article/detail', element: <ArticleDetail /> } // 記事詳細画面
 ];
