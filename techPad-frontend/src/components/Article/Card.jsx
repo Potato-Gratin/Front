@@ -8,9 +8,18 @@ import Comment from "../Comment";
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
 import { Button } from "@mui/material";
 import { useTheme } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function ArticleCard({ title, user, date, text, favorite, comment }) {
     const theme = useTheme();
+    const navigate = useNavigate();
+
+    // ダミーID
+    const id = 1;
+
+    const handleClick = () => {
+        navigate(`/article/detail?id=${id}`);
+    }
 
     return (
         <>
@@ -60,8 +69,7 @@ export default function ArticleCard({ title, user, date, text, favorite, comment
                     </div>
                     <Button
                         variant="contained"
-                        type="a"
-                        href="#"
+                        onClick={handleClick}
                         sx={{
                             marginTop: '1rem',
                             backgroundColor: `${theme.palette.navy.main}`,

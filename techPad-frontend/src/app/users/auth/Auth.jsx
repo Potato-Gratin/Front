@@ -22,7 +22,7 @@ export default function Auth() {
         const { user, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: 'http://localhost:3000/auth/redirect',
+                redirectTo: 'http://localhost:5000/auth/redirect',
             }
         });
 
@@ -37,7 +37,7 @@ export default function Auth() {
         const { user, error } = await supabase.auth.signInWithOAuth({
             provider: 'github',
             options: {
-                redirectTo: 'http://localhost:3000/auth/redirect',
+                redirectTo: 'http://localhost:5000/auth/redirect',
             }
         });
 
@@ -52,7 +52,8 @@ export default function Auth() {
 
     return (
         <>
-            {/* <Dialog open={open} onClose={handleClose}>
+        {/* cookieダイアログ */}
+            <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Cookieの使用について</DialogTitle>
                 <DialogContent>
                     <Typography sx={{color: theme.palette.navy.main}}>
@@ -67,7 +68,7 @@ export default function Auth() {
                         No
                     </Button>
                 </DialogActions>
-            </Dialog> */}
+            </Dialog>
 
             {/* PC */}
             <Box sx={{ display: { xs: 'none', md: 'block' }, height: 'calc(100vh - 120px)' }}>
