@@ -1,17 +1,29 @@
 import { useTheme } from "@emotion/react";
 import { Avatar, Box, Typography } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useNavigate } from "react-router-dom";
 
 export default function UserProfileCard({ sx, userName, userIcon, displayId, userDescription }) {
     const theme = useTheme();
+    const navigate = useNavigate();
+
+    // ダミーID
+    const id = 1;
+
+    const handleClick = () => {
+        navigate(`/profile?id=${id}`)
+    }
 
     return (
         <>
             <Box
+            onClick={handleClick}
                 sx={{
                     background: 'white',
                     borderRadius: '10px',
-                    border: `1px solid ${theme.palette.navy.main}`, ...sx
+                    border: `1px solid ${theme.palette.navy.main}`,
+                    cursor: 'pointer',
+                    ...sx
                 }}
             >
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 4, mb: 1 }}>
