@@ -17,9 +17,8 @@ export default function AuthRedirect() {
         }
 
         fetchData();
-    }, []);
+        console.log(session);
 
-    useEffect(() => {
         if (session) {
             if (session.user) {
                 navigate('/');
