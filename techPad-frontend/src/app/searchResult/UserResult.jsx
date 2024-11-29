@@ -1,15 +1,11 @@
-
-
-import { Box, Card, CardContent, Typography, useTheme } from "@mui/material";
-import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
-
-import { useNavigate } from "react-router-dom";
+import { Box, Typography, useTheme } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import UserProfileCard from "../../components/UserProfileCard";
 
 
 export default function UserResult() {
     const theme = useTheme();
-    const navigate = useNavigate();
 
     const [users, setUsers] = useState([
         { id: 1, display_id: 'aaaaa', name: 'user1', description: 'profile1', articles: 10 },
@@ -31,24 +27,7 @@ export default function UserResult() {
                 setUsers(data)
             })
             .catch((error) => console.error(error));
-    }, [])
-
-    const handleClick = (id) => {
-        navigate(`/profile?id=${id}`);
-    }
-
-    // ダミー説明
-    let demoDescription = 'description';
-    for (let i = 0; i < 100; i++) {
-        demoDescription += '-';
-    }
-
-    const user = [{
-        userName: '山田花子',
-        userIcon: null,
-        displayId: '@aaaaaaaa',
-        userDescription: demoDescription
-    }];
+    }, [keyword])
 
     return (
         <>
@@ -71,13 +50,18 @@ export default function UserResult() {
                 >
                     Search Result
                 </Typography>
-                <UserProfileCard
-                    sx={{ width: '40vw', mt: 2, mb: 10, py: 4, px: 2 }}
-                    userName={user[0].userName}
-                    userIcon={user[0].userIcon}
-                    displayId={user[0].displayId}
-                    userDescription={user[0].userDescription}
-                />
+                {users.map((users) => (
+                    <UserProfileCard
+                        key={users.id}
+                        sx={{ width: '40vw', mt: 2, mb: 3, py: 4, px: 2 }}
+                        userName={users.name}
+                        userIcon={users.userIcon}
+                        displayId={users.display_id}
+                        userDescription={users.description}
+                        userId={users.id}
+                        articles={users.articles}
+                    />
+                ))}
             </Box>
         </>
     );
