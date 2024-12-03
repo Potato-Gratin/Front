@@ -23,10 +23,20 @@ export default function Editor() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // let md = '';
-        // if (el.current) {
-        //     md = el.current.mdValue;
-        // }
+        const md = el.current.mdValue;
+        const data = {
+            title: title,
+            content: md,
+            is_public: Boolean(radio),
+            user_id: "00000000-0000-0000-0000-000000000000",   // TODO: 登録時にuserテーブルのインサートを行う必要がある
+        }
+        fetch(process.env.REACT_APP_API_ORIGIN + '/articles', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
         navigate('#');
     }
 
