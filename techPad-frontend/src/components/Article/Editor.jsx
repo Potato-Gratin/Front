@@ -23,6 +23,7 @@ export default function Editor() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let id;
         const md = el.current.mdValue;
         const data = {
             title: title,
@@ -36,8 +37,10 @@ export default function Editor() {
             body: JSON.stringify(data),
         })
             .then(response => response.json())
-            .then(data => console.log(data))
-        navigate('#');
+            .then(data => {
+                id = data.id
+                navigate("/articles/" + id);
+            })
     }
 
     const toolbar = [
