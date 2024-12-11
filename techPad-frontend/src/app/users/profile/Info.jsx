@@ -57,9 +57,8 @@ export default function Info() {
                 }}>
                     <Avatar sx={{
                         bgcolor: 'white',
-                        width: '5.5rem',
-                        height: '5.5rem',
-                        cursor: 'pointer'
+                        width: '5.2rem',
+                        height: '5.2rem',
                     }}>
                         {!image ? (
                             <AccountCircleIcon sx={{ fontSize: '6rem', color: theme.palette.navy.main }} />
