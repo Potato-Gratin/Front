@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { Box, Button, FormControlLabel, Radio, RadioGroup, TextField, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../../utils/supabaseClient';
 
 const markdownValue = '';
 const titleValue = '';
@@ -29,11 +30,34 @@ export default function Editor() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // let md = '';
-        // if (el.current) {
-        //     md = el.current.mdValue;
-        // }
-        navigate('#');
+        let articleId;
+        const md = el.current.mdValue;
+
+        supabase.auth.getSession().then((res) => {
+            const session = res.data.session;
+            const userId = session?.user?.id;
+            if (!userId) {
+                navigate('/auth');
+                return;
+            }
+
+            const data = {
+                title: title,
+                content: md,
+                is_public: Boolean(radio),
+                user_id: userId,
+            }
+            fetch(process.env.REACT_APP_API_ORIGIN + '/articles', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    articleId = data.id
+                    navigate("/articles/" + articleId);
+                })
+        })
     }
 
 
